@@ -1,0 +1,4 @@
+
+** Ejecutar archivos C (terminal)
+  + gcc <archivo> -o 
+  + ./<archivo.out>
