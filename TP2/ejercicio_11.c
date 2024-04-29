@@ -4,6 +4,9 @@ int main() {
   int horas_trabajadas = 0;
   int cat = 0;
   int liquidacion_final = 0;
+  int const TARIFA_CAT_1 = 50;
+  int const TARIFA_CAT_2 = 70;
+  int const TARIFA_CAT_3 = 80;
 
   printf("Ingresa las horas trabajadas por el empleado y su categoría \nhoras "
          "trabajadas: ");
@@ -13,13 +16,13 @@ int main() {
 
   switch (cat) {
   case 1:
-    liquidacion_final = horas_trabajadas * 50;
+    liquidacion_final = horas_trabajadas * TARIFA_CAT_1;
     break;
   case 2:
-    liquidacion_final = horas_trabajadas * 70;
+    liquidacion_final = horas_trabajadas * TARIFA_CAT_2;
     break;
   case 3:
-    liquidacion_final = horas_trabajadas * 80;
+    liquidacion_final = horas_trabajadas * TARIFA_CAT_3;
     break;
   }
 

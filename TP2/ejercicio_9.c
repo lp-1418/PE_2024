@@ -1,6 +1,7 @@
 #include <stdio.h>
 
 int main() {
+  int const BONO = 50;
   int sueldo = 0;
   int cat = 0;
   int antiguedad = 0;
@@ -14,7 +15,7 @@ int main() {
   scanf("%d", &antiguedad);
 
   if (cat == 1) {
-    liquidacion_final = sueldo + (50 * antiguedad);
+    liquidacion_final = sueldo + (BONO * antiguedad);
   } else {
     liquidacion_final = sueldo;
   }
