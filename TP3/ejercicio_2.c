@@ -5,8 +5,9 @@ int main() {
   int positivos = 0;
   int negativos = 0;
   int base = 0;
+  int ciclos = 10;
 
-  for (int i = 0; i < 10; i++) {
+  for (int i = 0; i < ciclos; i++) {
     printf("Ingresa el valor(%d)", i + 1);
     scanf("%d", &num);
 

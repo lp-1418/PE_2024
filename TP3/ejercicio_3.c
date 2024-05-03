@@ -11,8 +11,9 @@ int main() {
   float promedio_impares = 0;
   int suma_impares = 0;
   int cantidad_impares = 0;
+  int ciclos = 8;
 
-  for (int i = 0; i < 8; i++) {
+  for (int i = 0; i < ciclos; i++) {
     printf("Ingrese valor(%d): ", i + 1);
     scanf("%d", &num);
 
@@ -31,7 +32,7 @@ int main() {
     }
   }
 
-  promedio_general = suma_general / 8;
+  promedio_general = suma_general / ciclos;
   promedio_pares = suma_pares / cantidad_pares;
   promedio_impares = suma_impares / cantidad_impares;
 

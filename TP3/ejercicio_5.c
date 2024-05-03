@@ -6,10 +6,10 @@ int main() {
   int multas_mayores = 0;
   int total_cobrado = 0;
   int suma_mayores = 0;
-  float promedio = 0;
+  float porcentaje = 0;
+  int ciclos = 50;
 
-  // TODO: Fix loop 50
-  for (int i = 0; i < 4; i++) {
+  for (int i = 0; i < ciclos; i++) {
     printf("Ingrese la patente: ");
     scanf("%d", &patente);
     printf("Ingrese el monto a pagar de la multa: ");
@@ -23,9 +23,10 @@ int main() {
     }
   }
 
-  // TODO: promedio
+  porcentaje = (suma_mayores * 100) / total_cobrado;
 
   printf("Hay %d multas mayores a $40 \nTotal cobrado $%d \nTotal cobrado en "
-         "multas mayores a $40: %d",
-         multas_mayores, total_cobrado, suma_mayores);
+         "multas mayores a $40: %d \nRepresentan el %.f por ciento del total "
+         "recaudado",
+         multas_mayores, total_cobrado, suma_mayores, porcentaje);
 }
