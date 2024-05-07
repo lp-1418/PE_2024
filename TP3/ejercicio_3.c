@@ -37,6 +37,6 @@ int main() {
   promedio_impares = suma_impares / cantidad_impares;
 
   printf("Promedio general: %.f \nPromedio pares: %.f \nPromedio impares %.f "
-         "\nMayores a quince %d",
+         "\nMayores a quince: %d",
          promedio_general, promedio_pares, promedio_impares, mayores_quince);
 }
