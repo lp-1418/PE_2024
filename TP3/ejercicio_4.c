@@ -2,6 +2,8 @@
 
 int main() {
   int num = 0;
+  int total = 0;
+  int ciclos = 30;
   // 1 a 10
   int grupo_1 = 0;
   int suma_1 = 0;
@@ -19,7 +21,7 @@ int main() {
   int suma_4 = 0;
   float promedio_4 = 0.0;
 
-  for (int i = 0; i < 30; i++) {
+  for (int i = 0; i < ciclos; i++) {
     printf("Ingrese un número(%d)", i + 1);
     scanf("%d", &num);
 
@@ -38,10 +40,12 @@ int main() {
     }
   }
 
-  promedio_1 = suma_1 / grupo_1;
-  promedio_2 = suma_2 / grupo_2;
-  promedio_3 = suma_3 / grupo_3;
-  promedio_4 = suma_4 / grupo_4;
+  total = grupo_1 + grupo_2 + grupo_3 + grupo_4;
+
+  promedio_1 = (grupo_1 * 100) / total;
+  promedio_2 = (grupo_2 * 100) / total;
+  promedio_3 = (grupo_3 * 100) / total;
+  promedio_4 = (grupo_4 * 100) / total;
 
   printf("Promedio grupo 1: %.f, Promedio grupo 2: %.f, Promedio grupo 3: %.f, "
          "Promedio grupo 4: %.f",
