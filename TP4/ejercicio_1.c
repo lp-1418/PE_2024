@@ -1,23 +1,27 @@
 #include <stdio.h>
 
 int main() {
-  int ciclos = 0;
   int suma_sueldos = 0;
+  int cant_sueldos = 0;
   int sueldo = 0;
+  char carga;
   float promedio = 0;
 
-  printf("¿Cuántos sueldos deseas ingresar?");
-  scanf("%d", &ciclos);
-
-  for (int i = 0; i < ciclos; i++) {
-    printf("Ingresa el sueldo (%d)", i + 1);
+  do {
+    printf("Ingresa el sueldo: ");
     scanf("%d", &sueldo);
 
     suma_sueldos += sueldo;
-  }
+    cant_sueldos++;
 
-  promedio = suma_sueldos / ciclos;
+    printf("Desea ingresar otro sueldo S/N:");
+    scanf(" %c", &carga);
+  } while (carga == 'S' || carga == 's');
+
+  promedio = suma_sueldos / cant_sueldos;
 
   printf("La suma de los sueldos es: %d \nEl promedio es %.f", suma_sueldos,
          promedio);
+
+  return 0;
 }

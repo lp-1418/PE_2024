@@ -1,7 +1,6 @@
 #include <stdio.h>
 
 int main() {
-  int ciclos = 0;
   int num = 0;
   int cantidad_positivos = 0;
   int cantidad_negativos = 0;
@@ -12,23 +11,24 @@ int main() {
   int suma_positivos = 0;
   int suma_negativos = 0;
 
-  printf("Ingresa la cantidad de valores a ingresar");
-  scanf("%d", &ciclos);
-
-  for (int i = 0; i < ciclos; i++) {
-    printf("Ingresa el valor(%d)", i + 1);
+  do {
+    printf("Ingresa el valor (1111 para salir): ");
     scanf("%d", &num);
 
+    if (num == 1111) {
+      break;
+    }
     if (num > 0) {
       suma_positivos += num;
       cantidad_positivos++;
     } else if (num < 0) {
       suma_negativos += num;
       cantidad_negativos++;
-    } else {
+    } else if (num == 0) {
       cantidad_ceros++;
     }
-  }
+
+  } while (num || num == 0);
 
   // Para evitar división por cero
   if (cantidad_positivos > 0) {
