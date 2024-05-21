@@ -1,12 +1,11 @@
 #include <stdio.h>
 
 int main() {
-  int num_factura;
-  int suma_importes;
-  int num_facturas_mil;
-  int num_facturas_diez;
-  int cantidad_entre;
-  int importe;
+  int num_factura = 0, suma_importes = 0;
+  int num_facturas_mil = 0;
+  int num_facturas_diez = 0;
+  int cantidad_entre = 0;
+  int importe = 0;
   do {
     printf("Ingrese número de factura: ");
     scanf("%d", &num_factura);
