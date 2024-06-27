@@ -48,8 +48,7 @@ int main() {
       analista_proyecto_1 = i;
     }
   }
-  // printf("Nro analista que trabajó menos proyecto 1: %d",
-  // analista_proyecto_1);
+  printf("Nro analista que trabajó menos proyecto 1: %d", analista_proyecto_1);
 
   // Sueldo de cada analista
   for (int i = 0; i < 10; i++) {
