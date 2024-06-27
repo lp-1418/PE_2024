@@ -1,7 +1,10 @@
 #include <stdio.h>
 
+#define S 5
+
 int main() {
-  int matriz[4][2] = {0};
+  int sueldos[S] = {0};
+  int edades[S] = {0};
   int edad, sueldo, sueldo_total, edad_total = 0;
   float sueldos_promedio, sueldo_promedio_23_40, edad_promedio = 0.0;
   int sueldo_total_23_40 = 0;
@@ -9,48 +12,47 @@ int main() {
   int edad_30_sueldo_1000 = 0;
   int menor_edad_promedio = 0;
 
-  for (int i = 0; i < 4; i++) {
-    for (int j = 0; j < 1; j++) {
-      printf("Ingresa edad y sueldo del empleado");
-      printf("Edad: ");
-      scanf("%d", &edad);
-      printf("Sueldo: ");
-      scanf("%d", &sueldo);
+  for (int i = 0; i < S; i++) {
+    printf("Ingresa edad y sueldo del empleado");
+    printf("Edad: ");
+    scanf("%d", &edad);
+    printf("Sueldo: ");
+    scanf("%d", &sueldo);
 
-      sueldo_total += sueldo;
-      edad_total += edad;
-      matriz[i][j] = sueldo;
-      matriz[i][j + 1] = edad;
-    }
+    edades[i] = edad;
+    sueldos[i] = sueldo;
+
+    sueldo_total += sueldo;
+    edad_total += edad;
   }
 
   // Sueldo y edad promedio generales
-  sueldos_promedio = sueldo_total / 4.0;
-  edad_promedio = edad_total / 4.0;
+  sueldos_promedio = sueldo_total / S;
+  edad_promedio = edad_total / S;
   printf("El salario promedio de los empleados es: %.f --- La edad promedio "
          "es: %.f \n",
          sueldos_promedio, edad_promedio);
 
   // Loop general
-  for (int i = 0; i < 4; i++) {
-    for (int j = 0; j < 1; j++) {
-      if (matriz[i][j + 1] >= 23 && matriz[i][j + 1] <= 40) {
-        cantidad_23_40++;
-        sueldo_total_23_40 += matriz[i][j];
-      }
-      if (matriz[i][j + 1] > 30 && matriz[i][j] < 1000) {
-        edad_30_sueldo_1000++;
-      }
-      if (matriz[i][j + 1] < edad_promedio) {
-        menor_edad_promedio++;
-      }
+  for (int i = 0; i < S; i++) {
+    if (edades[i] > 30 && sueldos[i] < 1000) {
+      edad_30_sueldo_1000++;
+    }
+    if (edades[i] < edad_promedio) {
+      menor_edad_promedio++;
+    }
+    if (edades[i] > 23 && edades[i] < 40) {
+      cantidad_23_40++;
+      sueldo_total_23_40 += sueldos[i];
     }
   }
 
   // Sueldo promedio 23-40 años
-  sueldo_promedio_23_40 = sueldo_total_23_40 / cantidad_23_40;
-  printf("Promedio sueldo empleados entre 23 y 40 años: $%.f \n",
-         sueldo_promedio_23_40);
+  if (cantidad_23_40 > 0) {
+    sueldo_promedio_23_40 = sueldo_total_23_40 / cantidad_23_40;
+    printf("Promedio sueldo empleados entre 23 y 40 años: $%.f \n",
+           sueldo_promedio_23_40);
+  }
 
   // Empleados > 30 años con sueldo < 1000
   printf("Empleados menores de 30 años con sueldo menor a 1000: %d \n",
