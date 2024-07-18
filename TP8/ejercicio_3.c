@@ -18,7 +18,6 @@ int main() {
 
   printf("Ingrese los datos a la planilla - 0 para salir \n");
   do {
-    // Ingreso de datos
     printf("Número de analista (1 al 10): ");
     scanf("%d", &analista);
     if (analista == 0) {
@@ -48,7 +47,7 @@ int main() {
       analista_proyecto_1 = i;
     }
   }
-  printf("Analista que trabajó menos proyecto 1: %s",
+  printf("Analista que trabajó menos proyecto 1: %s \n",
          nombres_analistas[analista_proyecto_1]);
 
   // Sueldo de cada analista
@@ -77,7 +76,7 @@ int main() {
   }
 
   for (int i = 0; i < 10; i++) {
-    printf("Sueldo: %d -Nombre: %s - Valor hora: %d \n", sueldos_analistas[i],
+    printf("Sueldo: %d - Nombre: %s - Valor hora: %d \n", sueldos_analistas[i],
            nombres_analistas[i], valor_hora[i]);
   }
 
