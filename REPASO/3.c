@@ -1,15 +1,19 @@
 #include <stdio.h>
 
-void ordenar(int sueldos[], char analistas[]) {
+void ordenar(int sueldos[], char *analistas[]) {
   int aux = 0;
-  int aux_b = 0;
-  // FIX: sorting sueldos por nombre
+  char *aux_b = 0;
   for (int i = 0; i < 10 - 1; i++) {
     for (int j = 0; j < 10 - 1; j++) {
       if (sueldos[j] > sueldos[j + 1]) {
         aux = sueldos[j];
+        aux_b = analistas[j];
         sueldos[j] = sueldos[j + 1];
+
         sueldos[j + 1] = aux;
+
+        analistas[j] = analistas[j + 1];
+        analistas[j + 1] = aux_b;
       }
     }
   }
@@ -37,8 +41,8 @@ int main() {
     printf("Ingresa la cantidad de horas trabajadas en ese proyecto");
     scanf("%d", &input_c);
 
-    analistas[input_a] += input_c;
-    horas_proyecto[input_a][input_b] = input_c;
+    analistas[input_a - 1] += input_c;
+    horas_proyecto[input_a - 1][input_b - 1] = input_c;
   } while (input_a != 0);
 
   // sueldos
@@ -47,13 +51,14 @@ int main() {
   }
 
   // ordenar
-  ordenar(sueldos_analistas, *nombre_analistas);
+  ordenar(sueldos_analistas, nombre_analistas);
 
-  // menos 5 horas
+  // FIX: nro analistas que trabajaron menos de 5 hrs en algun proyecto
   for (int i = 0; i < 10; i++) {
     for (int j = 0; j < 15; j++) {
       if (horas_proyecto[i][j] < 5) {
         contador_5_horas++;
+        break;
       }
     }
   }
@@ -63,5 +68,7 @@ int main() {
            sueldos_analistas[i]);
   }
 
+  printf("Cantidad de proyectos con menos de 5 horas de trabajo -> %d",
+         contador_5_horas);
   return 0;
 }
