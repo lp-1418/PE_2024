@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-void bubbleSort(int a[10]);
+void bubbleSort(int a[]);
 int busquedaBinaria(int a[], int dato);
 int busquedaSecuencial(int a[], int dato);
 
@@ -11,19 +11,16 @@ int main() {
 
   bubbleSort(vector);
 
-  for (int i = 0; i < 10; i++) {
-    printf(" %d ", vector[i]);
-  }
   printf("Ingresa número a buscar: ");
   scanf("%d", &num);
   printf("Ingresar número búsqueda -> 1 para binaria - 2 para secuencial");
   scanf("%d", &input);
   if (input == 1) {
     int resultado = busquedaBinaria(vector, num);
-    printf("posición %d", resultado);
+    printf("posición ->  %d", resultado);
   } else if (input == 2) {
     int resultado = busquedaSecuencial(vector, num);
-    printf("posición %d", resultado);
+    printf("posición -> %d", resultado);
   }
   return 0;
 }
