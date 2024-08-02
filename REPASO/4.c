@@ -11,9 +11,9 @@ int main() {
 
   bubbleSort(vector);
 
-  printf("Ingresa número a buscar: ");
+  printf("Ingresa número a buscar: \n");
   scanf("%d", &num);
-  printf("Ingresar número búsqueda -> 1 para binaria - 2 para secuencial");
+  printf("Ingresar número búsqueda -> 1 para binaria - 2 para secuencial \n");
   scanf("%d", &input);
   if (input == 1) {
     int resultado = busquedaBinaria(vector, num);
