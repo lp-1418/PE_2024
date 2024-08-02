@@ -35,6 +35,7 @@ int busquedaBinaria(int a[], int b) {
   }
   return -1;
 }
+
 int busquedaSecuencial(int a[], int b) {
   int i;
   for (i = 0; i < 10; i++) {
