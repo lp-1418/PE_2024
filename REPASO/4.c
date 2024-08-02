@@ -1,5 +1,6 @@
 #include <stdio.h>
 
+// Definición funciones
 void bubbleSort(int a[]);
 int busquedaBinaria(int a[], int dato);
 int busquedaSecuencial(int a[], int dato);
@@ -9,13 +10,14 @@ int main() {
   int input = 0;
   int num = 0;
 
-  bubbleSort(vector);
-
   printf("Ingresa número a buscar: \n");
   scanf("%d", &num);
   printf("Ingresar número búsqueda -> 1 para binaria - 2 para secuencial \n");
   scanf("%d", &input);
+
   if (input == 1) {
+    // Ordenamiento
+    bubbleSort(vector);
     int resultado = busquedaBinaria(vector, num);
     printf("posición ->  %d", resultado);
   } else if (input == 2) {
