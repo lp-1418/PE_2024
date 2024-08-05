@@ -16,14 +16,14 @@ void bubbleSort(int promedios[], int cantidadMaterias);
 int main() {
   int cantidadEstudiantes;
   int cantidadMaterias = 5;
-  // recordar -> [estudiantes][materias]
-  float calificaciones[100][5] = {0};
   float promediosEstudiantes[100] = {0};
   float promediosMaterias[cantidadMaterias];
   int promedios[cantidadMaterias];
 
   printf("Ingrese cantidad de estudiantes");
   scanf("%d", &cantidadEstudiantes);
+
+  float calificaciones[cantidadEstudiantes][cantidadMaterias];
 
   // Carga notas
   ingresarCalificaciones(calificaciones, cantidadEstudiantes);
